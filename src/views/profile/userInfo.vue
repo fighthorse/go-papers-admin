@@ -61,7 +61,7 @@ export default {
       this.$refs['form'].validate(valid => {
         if (valid) {
           updateUser(this.user).then(response => {
-            if (response.code === 200) {
+            if (response.code === 0) {
               this.msgSuccess('修改成功')
             } else {
               this.msgError(response.msg)

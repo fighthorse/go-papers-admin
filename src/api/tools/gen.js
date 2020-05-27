@@ -3,7 +3,7 @@ import request from '@/utils/request'
 // 查询生成表数据
 export function listTable(query) {
   return request({
-    url: '/backend/sys/tables/page',
+    url: '/system/tables/page',
     method: 'get',
     params: query
   })
@@ -11,7 +11,7 @@ export function listTable(query) {
 // 查询db数据库列表
 export function listDbTable(query) {
   return request({
-    url: '/backend/db/tables/page',
+    url: '/system/db/tables/page',
     method: 'get',
     params: query
   })
@@ -20,7 +20,7 @@ export function listDbTable(query) {
 // 查询表详细信息
 export function getGenTable(tableId) {
   return request({
-    url: '/backend/sys/tables/info/' + tableId,
+    url: '/system/tables/info/' + tableId,
     method: 'get'
   })
 }
@@ -28,7 +28,7 @@ export function getGenTable(tableId) {
 // 修改代码生成信息
 export function updateGenTable(data) {
   return request({
-    url: '/backend/sys/tables/info',
+    url: '/system/tables/info',
     method: 'put',
     data: data
   })
@@ -37,7 +37,7 @@ export function updateGenTable(data) {
 // 导入表
 export function importTable(data) {
   return request({
-    url: '/backend/sys/tables/info',
+    url: '/system/tables/info',
     method: 'post',
     params: data
   })
@@ -45,14 +45,14 @@ export function importTable(data) {
 // 预览生成代码
 export function previewTable(tableId) {
   return request({
-    url: '/backend/gen/preview/' + tableId,
+    url: '/system/gen/preview/' + tableId,
     method: 'get'
   })
 }
 // 删除表数据
 export function delTable(tableId) {
   return request({
-    url: '/backend/sys/tables/info/' + tableId,
+    url: '/system/tables/info/' + tableId,
     method: 'delete'
   })
 }

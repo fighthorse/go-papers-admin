@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/login',
+    url: '/backend/login',
     method: 'post',
     data
   })
@@ -10,7 +10,7 @@ export function login(data) {
 
 export function refreshtoken(data) {
   return request({
-    url: '/refreshtoken',
+    url: '/backend/refreshtoken',
     method: 'post',
     data
   })

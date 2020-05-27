@@ -284,7 +284,7 @@ export default {
         if (valid) {
           if (this.form.configId !== undefined) {
             updateConfig(this.form).then(response => {
-              if (response.code === 200) {
+              if (response.code === 0) {
                 this.msgSuccess('修改成功')
                 this.open = false
                 this.getList()
@@ -294,7 +294,7 @@ export default {
             })
           } else {
             addConfig(this.form).then(response => {
-              if (response.code === 200) {
+              if (response.code === 0) {
                 this.msgSuccess('新增成功')
                 this.open = false
                 this.getList()

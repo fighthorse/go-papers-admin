@@ -42,6 +42,7 @@ const actions = {
   login({ commit }, userInfo) {
     return new Promise((resolve, reject) => {
       login(userInfo).then(response => {
+        console.log(response)
         const { token } = response
         commit('SET_TOKEN', token)
         setToken(token)
@@ -56,6 +57,7 @@ const actions = {
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       getInfo().then(response => {
+        console.log(response)
         if (!response || !response.data) {
           commit('SET_TOKEN', '')
           removeToken()

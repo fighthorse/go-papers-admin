@@ -146,8 +146,9 @@ export default {
     getCode() {
       getCodeImg().then(res => {
         if (res !== undefined) {
-          this.codeUrl = res.data
-          this.loginForm.uuid = res.id
+          let result = res.data
+          this.codeUrl = result.img
+          this.loginForm.uuid = result.id
         }
       })
     },

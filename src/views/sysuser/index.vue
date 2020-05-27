@@ -561,7 +561,7 @@ export default {
         cancelButtonText: '取消'
       }).then(({ value }) => {
         resetUserPwd(row.userId, value).then(response => {
-          if (response.code === 200) {
+          if (response.code === 0) {
             this.msgSuccess('修改成功，新密码是：' + value)
           } else {
             this.msgError(response.msg)
@@ -575,7 +575,7 @@ export default {
         if (valid) {
           if (this.form.userId !== undefined) {
             updateUser(this.form).then(response => {
-              if (response.code === 200) {
+              if (response.code === 0) {
                 this.msgSuccess('修改成功')
                 this.open = false
                 this.getList()
@@ -585,7 +585,7 @@ export default {
             })
           } else {
             addUser(this.form).then(response => {
-              if (response.code === 200) {
+              if (response.code === 0) {
                 this.msgSuccess('新增成功')
                 this.open = false
                 this.getList()

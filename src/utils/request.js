@@ -44,6 +44,7 @@ service.interceptors.response.use(
    */
   response => {
     const code = response.data.code
+    console.log(code)
     if (code === 401) {
       store.dispatch('user/resetToken')
       if (location.href.indexOf('login') !== -1) {
@@ -77,13 +78,14 @@ service.interceptors.response.use(
       return false
     } else if (code === 400 || code === 403) {
       Message({
-        message: response.data.msg,
+        message: response.data.message,
         type: 'error',
         duration: 5 * 1000
       })
-    } else if (code !== 200) {
+      return false
+    } else if (code !== 0) {
       Notification.error({
-        title: response.data.msg
+        title: response.data.message
       })
       return Promise.reject('error')
     } else {

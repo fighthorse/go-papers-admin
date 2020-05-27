@@ -121,11 +121,9 @@ const actions = {
       getRoutes().then(response => {
         // console.log(JSON.stringify(response))
         let data = response
-        if (response.code !== 200) {
-          this.$message({
-            message: '菜单数据加载异常',
-            type: 0
-          })
+        console.log(data)
+        if (data === undefined || data === false) {
+          //  异常
         } else {
           data = response.data
           Object.assign(loadMenuData, data)

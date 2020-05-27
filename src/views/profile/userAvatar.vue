@@ -117,7 +117,7 @@ export default {
         const formData = new FormData()
         formData.append('upload[]', data)
         uploadAvatar(formData).then(response => {
-          if (response.code === 200) {
+          if (response.code === 0) {
             this.open = false
             this.options.img = process.env.VUE_APP_BASE_API + '/' + response.data
             this.msgSuccess('修改成功')
