@@ -12,7 +12,7 @@ export function listOrgan(query) {
 // 查询Organ详细
 export function getOrgan (organId) {
     return request({
-        url: '/backend/organ/' + organId,
+        url: '/backend/organ/info/' + organId,
         method: 'get'
     })
 }
