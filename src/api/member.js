@@ -12,7 +12,7 @@ export function listMember(query) {
 // 查询Member详细
 export function getMember (memberId) {
     return request({
-        url: '/backend/member/' + memberId,
+        url: '/backend/member/info/' + memberId,
         method: 'get'
     })
 }
@@ -39,7 +39,7 @@ export function updateMember(data) {
 // 删除Member
 export function delMember(memberId) {
     return request({
-        url: '/backend/member/' + memberId,
+        url: '/backend/member/del/' + memberId,
         method: 'delete'
     })
 }

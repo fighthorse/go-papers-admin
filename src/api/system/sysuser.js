@@ -12,14 +12,14 @@ export function listUser(query) {
 // 查询用户详细
 export function getUser(userId) {
   return request({
-    url: '/backend/sysUser/' + userId,
+    url: '/backend/sysUser/info/' + userId,
     method: 'get'
   })
 }
 
 export function getUserInit() {
   return request({
-    url: '/backend/sysUser/',
+    url: '/backend/sysUser',
     method: 'get'
   })
 }
@@ -45,7 +45,7 @@ export function updateUser(data) {
 // 删除用户
 export function delUser(userId) {
   return request({
-    url: '/backend/sysUser/' + userId,
+    url: '/backend/sysUser/del/' + userId,
     method: 'delete'
   })
 }

@@ -543,12 +543,15 @@ export default {
       this.getTreeselect()
 
       const userId = row.userId || this.ids
-      getUser(userId).then(response => {
-        this.form = response.data
-        this.postOptions = response.posts
-        this.roleOptions = response.roles
-        this.form.postIds = response.postIds[0]
-        this.form.roleIds = response.roleIds[0]
+      getUser(userId).then(resp => {
+        var rr = resp.data
+        console.log(rr.roleIds)
+        console.log(rr.postIds)
+        this.form = rr.data
+        this.postOptions = rr.posts
+        this.roleOptions = rr.roles
+        this.form.postIds = rr.postIds[0]
+        this.form.roleIds = rr.roleIds[0]
         this.open = true
         this.title = '修改用户'
         this.form.password = ''
